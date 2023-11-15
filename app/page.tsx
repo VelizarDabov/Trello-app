@@ -1,3 +1,4 @@
+import Board from '@/components/Board'
 import Header from '@/components/Header'
 
 export default function Home() {
@@ -6,7 +7,7 @@ export default function Home() {
       {/*header*/}
 <Header/>
        {/*bord*/}
-     <h1>Trello</h1>
+   <Board/>
     </main>
   )
 }
