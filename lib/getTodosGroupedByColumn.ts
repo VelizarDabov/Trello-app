@@ -8,7 +8,8 @@ export const getTodosGroupedByColumn = async() => {
         collectionId
     )
   const todos = data.documents;
-  console.log(todos)
+//   const todosLength = todos.length; 
+
 const columns = todos.reduce((acc, todo) => {
     if(!acc.get(todo.status)){
         acc.set(todo.status, {
@@ -25,7 +26,7 @@ acc.get(todo.status)!.todos.push({
 })
 return acc
 }, new Map<TypedColumn, Column>());
-const columnTypes: TypedColumn[] = ['todo', 'inprogress', 'done'];
+const columnTypes: TypedColumn[] = ['todo', 'inprogres', 'done'];
 
 for(const columnType of columnTypes){
     if(!columns.get(columnType)){
@@ -43,6 +44,5 @@ const sortedColumns = new Map(
 const board: Board={
     columns: sortedColumns
 }
-console.log(columns)
-return board
+return  board
 }
