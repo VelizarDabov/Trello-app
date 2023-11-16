@@ -10,15 +10,18 @@ import Image from 'next/image'
 
 const  Modal = () => {
     const imagePickerRef = useRef<HTMLInputElement>(null)
-const [newTaskInput, setNewTaskInput, addTask, image, setImage, newTaskType] = useBoardStore((state)=> [
+const [addTask,image,setImage, newTaskInput, setNewTaskInput,  newTaskType] = useBoardStore((state)=> [
+    state.addTask,
+    state.image,
+    state.setImage,
     state.newTaskInput,
     state.setNewTaskInput,
-    state.addTask,
-    // state.image,
-    state.setImage,
     state.newTaskType,
+    
+  
+   
 ]);
-console.log(setNewTaskInput)
+console.log(setImage)
 const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if(!newTaskInput) return;
@@ -84,12 +87,12 @@ className='w-full border border-gray-300 rounded-md outline-none p-5 mb-5'
         <PhotoIcon className='h-6 w-6 mr-2 inline-block'/>
         Upload image
     </button>
-    {!image && ( <Image 
+    {!image && ( <img
     alt='Uploaded Image'
     width={200}
     height={200}
     className='w-full h-44 object-cover mt-2 filter hover:grayscale transition-all duration-150 cursor-not-allowed'
-     src= {URL.createObjectURL(image)}
+     src= {'https://img.freepik.com/premium-vector/png-files-transparent-vector-background-png-background_302321-1276.jpg'}
     onClick={() => {
         setImage(null)
     }}
