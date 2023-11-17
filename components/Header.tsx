@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import logo from "@/logo.png";
+import todoImage from '@/todo.png'
 import { MagnifyingGlassIcon, UserCircleIcon } from "@heroicons/react/24/solid";
 import Avatar from "react-avatar";
 import { useBoardStore } from "@/store/BoardStore";
@@ -12,20 +13,20 @@ const [searchString, setSearchString] = useBoardStore((state) => [
   state.setSearchString,
 ])
 const [todosLength, setTodosLength] = useState(0);
-useEffect(() => {
-  const fetchData = async () => {
-    const { todosLength } = await getTodosGroupedByColumn();
-    setTodosLength(todosLength);
-  };
+// useEffect(() => {
+//   const fetchData = async () => {
+//     const { todosLength } = await getTodosGroupedByColumn();
+//     setTodosLength(todosLength);
+//   };
 
-  fetchData();
-}, []);
+//   fetchData();
+// }, []);
   return (
     <header>
       <div className="flex flex-col md:flex-row items-center p-5 bg-gray-500/10 rounded-b-2xl">
-        <div className="absolute top-0 left-0 w-full h-96 bg-gradient-to-br from-pink-400 to-[#0055D1] roubded-md filter blur-3xl opacity-50 -z-50"/>
+        <div className="absolute top-0 left-0 w-full h-96 bg-gradient-to-br from-blue-200 to-[#377e95] roubded-md filter blur-3xl opacity-50 -z-50"/>
         <Image
-          src={logo}
+          src={todoImage}
           alt="trello-app"
           width={300}
           height={100}
@@ -51,7 +52,7 @@ useEffect(() => {
       <div className="flex items-center justify-center px-5 py-2 md:py-5">
         <p className="flex items-center p-5 text-sm font-light pr-5 shadow-xl rounded-xl w-fit bg-white italic text-[#0055D1] ">
           <UserCircleIcon className="inline-block h-10 w-10 text-[#0055D1] mr-1"/>
-          {`Summarising your task for the day.. ${todosLength}`}
+          {`Summarising your task for the day..  name="Velizar Dabov`}
         </p>
       </div>
     </header>

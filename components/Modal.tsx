@@ -4,9 +4,8 @@ import { Dialog, Transition } from '@headlessui/react'
 import { useModalStore } from '@/store/ModalStore'
 import { useBoardStore } from '@/store/BoardStore'
 import TaskTypeRadioGroup from './TaskTypeRadioGroup'
-
 import { PhotoIcon } from '@heroicons/react/20/solid'
-import Image from 'next/image'
+
 
 const  Modal = () => {
     const imagePickerRef = useRef<HTMLInputElement>(null)
@@ -21,7 +20,7 @@ const [addTask,image,setImage, newTaskInput, setNewTaskInput,  newTaskType] = us
   
    
 ]);
-console.log(setImage)
+
 const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if(!newTaskInput) return;
