@@ -23,6 +23,7 @@ const databaseId:string = '6553578b401bf2a9b3ac';
 const collectionId:string = '655357b336a9dfb79726';
 
 export const useBoardStore = create<BoardState>((set, get) => ({
+  
   board:{
     columns: new Map<TypedColumn, Column>(),
   },

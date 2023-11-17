@@ -8,6 +8,7 @@ type Props = {
   id: TypedColumn;
   todos: [];
   index: number;
+ 
 };
 const Column = ({ id, todos, index }: Props) => {
   const [searchString, setNewTaskType] = useBoardStore((state) => [state.searchString, state.setNewTaskType,]);
