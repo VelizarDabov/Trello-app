@@ -1,11 +1,10 @@
 "use client";
 import Image from "next/image";
-import logo from "@/logo.png";
 import todoImage from '@/todo.png'
 import { MagnifyingGlassIcon, UserCircleIcon } from "@heroicons/react/24/solid";
 import Avatar from "react-avatar";
 import { useBoardStore } from "@/store/BoardStore";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { getTodosGroupedByColumn } from "@/lib/getTodosGroupedByColumn";
 export const Header = () => {
 const [searchString, setSearchString] = useBoardStore((state) => [
@@ -13,14 +12,7 @@ const [searchString, setSearchString] = useBoardStore((state) => [
   state.setSearchString,
 ])
 const [todosLength, setTodosLength] = useState(0);
-// useEffect(() => {
-//   const fetchData = async () => {
-//     const { todosLength } = await getTodosGroupedByColumn();
-//     setTodosLength(todosLength);
-//   };
 
-//   fetchData();
-// }, []);
   return (
     <header>
       <div className="flex flex-col md:flex-row items-center p-5 bg-gray-500/10 rounded-b-2xl">
