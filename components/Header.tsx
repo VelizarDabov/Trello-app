@@ -5,7 +5,6 @@ import { MagnifyingGlassIcon, UserCircleIcon } from "@heroicons/react/24/solid";
 import Avatar from "react-avatar";
 import { useBoardStore } from "@/store/BoardStore";
 import {  useState } from "react";
-import { getTodosGroupedByColumn } from "@/lib/getTodosGroupedByColumn";
 export const Header = () => {
 const [searchString, setSearchString] = useBoardStore((state) => [
   state.searchString, 
