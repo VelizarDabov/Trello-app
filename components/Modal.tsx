@@ -16,9 +16,6 @@ const [addTask,image,setImage, newTaskInput, setNewTaskInput,  newTaskType] = us
     state.newTaskInput,
     state.setNewTaskInput,
     state.newTaskType,
-    
-  
-   
 ]);
 
 const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
